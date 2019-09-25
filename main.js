@@ -31,7 +31,7 @@ function startGame() {
 	car.style.left = '125px';
 	car.style.top = 'auto';
 	car.style.bottom = '10px';
-	for(let i = 0; i < getQuantityElements(100); i++){
+	for(let i = 0; i < getQuantityElements(100) + 1; i++){
 		const line = document.createElement('div');
 		line.classList.add('line');
 		line.style.top = (i * 100) + 'px';
@@ -130,5 +130,5 @@ function moveEnemy(){
 	});
 }
 function getQuantityElements(height) {
-	return document.documentElement.clientHeight / height + 1;
+	return Math.ceil(document.documentElement.clientHeight / height + 1);
 }
